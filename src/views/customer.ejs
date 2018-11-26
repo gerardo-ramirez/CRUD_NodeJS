@@ -1,0 +1,80 @@
+
+    <%- include partials/navegation.ejs%>
+   
+    <h1>HOME!!!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-5">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                        <th>Num data </th>
+                        <th>Nombre </th>
+                        <th>address</th>
+                        <th>tel </th>
+                        <th>actions</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <% if (data){ %>
+                            <% for (let i=0; i<data.length; i++){ %>
+                                    <tr>
+                                            <td><%= (i + 1) %></td>
+                                            <td><%= data[i].name %></td>
+                                            <td><%= data[i].address %></td>
+                                            <td><%= data[i].phone %></td>
+                                            <td>
+                                                <!--se pasa el dato para ontener el id de ese indice-->
+                                              <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
+                                              <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                                            </td>
+                                          </tr>
+
+                           <% }%>
+
+                       <% } %>
+                      
+           
+                    </tbody>
+                </table>
+                <%= data[3].name%>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="card">
+                    <div class="card-header"><h3>Registro</h3></div>
+                    <!--configurar ruta /add a traves del server -->
+                    <form action="/add" method="POST">
+                        
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="adress" placeholder="adress" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="number" name="phone" placeholder="telefono" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary ">enviar</button>
+                    
+                
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+
+
+    <%- include partials/footer.ejs%>
+  
+
+
+
+
+

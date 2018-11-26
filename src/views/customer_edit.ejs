@@ -1,0 +1,30 @@
+
+<%- include partials/navegation.ejs%>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.id%>" method="POST">
+                        <div class="form-group">
+                                <input type="text" name="name" value="<%= data.name%>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" name="adress" value="<%= data.adress%>"  class="form-control">
+                            </div>
+                            <div class="form-group">
+                                    <input type="number" name="phone" value="<%= data.phone%>" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-secondary ">Actualidar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include partials/footer.ejs%>
+

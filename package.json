@@ -1,0 +1,22 @@
+{
+  "name": "CrudMysqlNode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-myconnection": "^1.0.4",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
